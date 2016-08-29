@@ -1,0 +1,404 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5D02E77E1D4C0E2E0056D2D9 /* MyStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D02E77C1D4C0E2E0056D2D9 /* MyStore.xcdatamodeld */; };
+		5D14C0641D41724B0059ACF5 /* warranties.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D14C0631D41724B0059ACF5 /* warranties.json */; };
+		5D14C0661D41CC3B0059ACF5 /* WarrantyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D14C0651D41CC3B0059ACF5 /* WarrantyCell.xib */; };
+		5D14C0681D41CE440059ACF5 /* WarrantyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14C0671D41CE440059ACF5 /* WarrantyCell.swift */; };
+		5D292ED21D432D5E00413BEA /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D292ED11D432D5E00413BEA /* SummaryViewController.swift */; };
+		5D44B0DD1D613FF500FB0976 /* SummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D44B0DC1D613FF500FB0976 /* SummaryCell.swift */; };
+		5D5462241D6D5FDF008BBF1C /* Sale+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5462231D6D5FDF008BBF1C /* Sale+CoreDataProperties.swift */; };
+		5D596E021D6A059200BD37EB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D596E011D6A059200BD37EB /* ProfileViewController.swift */; };
+		5D6E0CA11D50E31800FCE210 /* Sale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E0C9D1D50E31800FCE210 /* Sale.swift */; };
+		5D6E0CA31D50E31800FCE210 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E0C9F1D50E31800FCE210 /* Item.swift */; };
+		5D6E0CA51D50E43200FCE210 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E0CA41D50E43200FCE210 /* CoreDataStack.swift */; };
+		5D9326DF1D57F3E800DA00B7 /* SaleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9326DE1D57F3E800DA00B7 /* SaleDetailViewController.swift */; };
+		5D9326E11D584ECE00DA00B7 /* SaleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9326E01D584ECE00DA00B7 /* SaleCell.swift */; };
+		5DD91C6C1D49C86D004D60F9 /* SalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD91C6B1D49C86D004D60F9 /* SalesViewController.swift */; };
+		5DD91C771D4BC249004D60F9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD91C761D4BC249004D60F9 /* HomeViewController.swift */; };
+		5DEC15901D6E006E00744FF1 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC158F1D6E006E00744FF1 /* Item+CoreDataProperties.swift */; };
+		5DF78F161D4112EE00F50718 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF78F151D4112EE00F50718 /* AppDelegate.swift */; };
+		5DF78F1B1D4112EE00F50718 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DF78F191D4112EE00F50718 /* Main.storyboard */; };
+		5DF78F1D1D4112EE00F50718 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DF78F1C1D4112EE00F50718 /* Assets.xcassets */; };
+		5DF78F201D4112EE00F50718 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DF78F1E1D4112EE00F50718 /* LaunchScreen.storyboard */; };
+		5DF78F281D4113B000F50718 /* TechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF78F271D4113B000F50718 /* TechViewController.swift */; };
+		5DF78F2A1D412A7B00F50718 /* WarrantyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF78F291D412A7B00F50718 /* WarrantyViewController.swift */; };
+		5DF78F2C1D412AD700F50718 /* Warranty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF78F2B1D412AD700F50718 /* Warranty.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5D02E77D1D4C0E2E0056D2D9 /* MyStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyStore.xcdatamodel; sourceTree = "<group>"; };
+		5D14C0631D41724B0059ACF5 /* warranties.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = warranties.json; sourceTree = "<group>"; };
+		5D14C0651D41CC3B0059ACF5 /* WarrantyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WarrantyCell.xib; sourceTree = "<group>"; };
+		5D14C0671D41CE440059ACF5 /* WarrantyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarrantyCell.swift; sourceTree = "<group>"; };
+		5D292ED11D432D5E00413BEA /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		5D44B0DC1D613FF500FB0976 /* SummaryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryCell.swift; sourceTree = "<group>"; };
+		5D5462231D6D5FDF008BBF1C /* Sale+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Sale+CoreDataProperties.swift"; path = "../Sale+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5D596E011D6A059200BD37EB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5D6E0C9D1D50E31800FCE210 /* Sale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sale.swift; path = ../Sale.swift; sourceTree = "<group>"; };
+		5D6E0C9F1D50E31800FCE210 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = ../Item.swift; sourceTree = "<group>"; };
+		5D6E0CA41D50E43200FCE210 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = ../CoreDataStack.swift; sourceTree = "<group>"; };
+		5D9326DE1D57F3E800DA00B7 /* SaleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaleDetailViewController.swift; sourceTree = "<group>"; };
+		5D9326E01D584ECE00DA00B7 /* SaleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaleCell.swift; sourceTree = "<group>"; };
+		5DD91C6B1D49C86D004D60F9 /* SalesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalesViewController.swift; sourceTree = "<group>"; };
+		5DD91C761D4BC249004D60F9 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5DEC158F1D6E006E00744FF1 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataProperties.swift"; path = "../Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5DF78F121D4112EE00F50718 /* Staples Sales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Staples Sales.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DF78F151D4112EE00F50718 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5DF78F1A1D4112EE00F50718 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5DF78F1C1D4112EE00F50718 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5DF78F1F1D4112EE00F50718 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5DF78F211D4112EE00F50718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DF78F271D4113B000F50718 /* TechViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechViewController.swift; sourceTree = "<group>"; };
+		5DF78F291D412A7B00F50718 /* WarrantyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarrantyViewController.swift; sourceTree = "<group>"; };
+		5DF78F2B1D412AD700F50718 /* Warranty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Warranty.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5DF78F0F1D4112EE00F50718 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5DD91C6F1D4B8BE1004D60F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D6E0C9D1D50E31800FCE210 /* Sale.swift */,
+				5D5462231D6D5FDF008BBF1C /* Sale+CoreDataProperties.swift */,
+				5D6E0C9F1D50E31800FCE210 /* Item.swift */,
+				5DEC158F1D6E006E00744FF1 /* Item+CoreDataProperties.swift */,
+				5DF78F2B1D412AD700F50718 /* Warranty.swift */,
+				5DF78F151D4112EE00F50718 /* AppDelegate.swift */,
+				5D6E0CA41D50E43200FCE210 /* CoreDataStack.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5DD91C701D4B8BE9004D60F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5D14C0671D41CE440059ACF5 /* WarrantyCell.swift */,
+				5D14C0651D41CC3B0059ACF5 /* WarrantyCell.xib */,
+				5D9326E01D584ECE00DA00B7 /* SaleCell.swift */,
+				5D44B0DC1D613FF500FB0976 /* SummaryCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		5DD91C711D4B8BF5004D60F9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5D596E011D6A059200BD37EB /* ProfileViewController.swift */,
+				5DD91C761D4BC249004D60F9 /* HomeViewController.swift */,
+				5DF78F271D4113B000F50718 /* TechViewController.swift */,
+				5DF78F291D412A7B00F50718 /* WarrantyViewController.swift */,
+				5D292ED11D432D5E00413BEA /* SummaryViewController.swift */,
+				5DD91C6B1D49C86D004D60F9 /* SalesViewController.swift */,
+				5D9326DE1D57F3E800DA00B7 /* SaleDetailViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5DF78F091D4112EE00F50718 = {
+			isa = PBXGroup;
+			children = (
+				5DF78F141D4112EE00F50718 /* Staples Sales */,
+				5DF78F131D4112EE00F50718 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5DF78F131D4112EE00F50718 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5DF78F121D4112EE00F50718 /* Staples Sales.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5DF78F141D4112EE00F50718 /* Staples Sales */ = {
+			isa = PBXGroup;
+			children = (
+				5DD91C711D4B8BF5004D60F9 /* Controllers */,
+				5DD91C701D4B8BE9004D60F9 /* View */,
+				5DD91C6F1D4B8BE1004D60F9 /* Model */,
+				5D14C0631D41724B0059ACF5 /* warranties.json */,
+				5D02E77C1D4C0E2E0056D2D9 /* MyStore.xcdatamodeld */,
+				5DF78F191D4112EE00F50718 /* Main.storyboard */,
+				5DF78F1C1D4112EE00F50718 /* Assets.xcassets */,
+				5DF78F1E1D4112EE00F50718 /* LaunchScreen.storyboard */,
+				5DF78F211D4112EE00F50718 /* Info.plist */,
+			);
+			path = "Staples Sales";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5DF78F111D4112EE00F50718 /* Staples Sales */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DF78F241D4112EE00F50718 /* Build configuration list for PBXNativeTarget "Staples Sales" */;
+			buildPhases = (
+				5DF78F0E1D4112EE00F50718 /* Sources */,
+				5DF78F0F1D4112EE00F50718 /* Frameworks */,
+				5DF78F101D4112EE00F50718 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Staples Sales";
+			productName = "Staples Sales";
+			productReference = 5DF78F121D4112EE00F50718 /* Staples Sales.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5DF78F0A1D4112EE00F50718 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Joel Rorseth";
+				TargetAttributes = {
+					5DF78F111D4112EE00F50718 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 6QJBCPUR9M;
+					};
+				};
+			};
+			buildConfigurationList = 5DF78F0D1D4112EE00F50718 /* Build configuration list for PBXProject "Staples Sales" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5DF78F091D4112EE00F50718;
+			productRefGroup = 5DF78F131D4112EE00F50718 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5DF78F111D4112EE00F50718 /* Staples Sales */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5DF78F101D4112EE00F50718 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D14C0641D41724B0059ACF5 /* warranties.json in Resources */,
+				5DF78F201D4112EE00F50718 /* LaunchScreen.storyboard in Resources */,
+				5D14C0661D41CC3B0059ACF5 /* WarrantyCell.xib in Resources */,
+				5DF78F1D1D4112EE00F50718 /* Assets.xcassets in Resources */,
+				5DF78F1B1D4112EE00F50718 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5DF78F0E1D4112EE00F50718 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DF78F2A1D412A7B00F50718 /* WarrantyViewController.swift in Sources */,
+				5D44B0DD1D613FF500FB0976 /* SummaryCell.swift in Sources */,
+				5D02E77E1D4C0E2E0056D2D9 /* MyStore.xcdatamodeld in Sources */,
+				5D6E0CA11D50E31800FCE210 /* Sale.swift in Sources */,
+				5DF78F2C1D412AD700F50718 /* Warranty.swift in Sources */,
+				5D596E021D6A059200BD37EB /* ProfileViewController.swift in Sources */,
+				5DEC15901D6E006E00744FF1 /* Item+CoreDataProperties.swift in Sources */,
+				5DD91C6C1D49C86D004D60F9 /* SalesViewController.swift in Sources */,
+				5D6E0CA51D50E43200FCE210 /* CoreDataStack.swift in Sources */,
+				5D6E0CA31D50E31800FCE210 /* Item.swift in Sources */,
+				5DD91C771D4BC249004D60F9 /* HomeViewController.swift in Sources */,
+				5DF78F281D4113B000F50718 /* TechViewController.swift in Sources */,
+				5D5462241D6D5FDF008BBF1C /* Sale+CoreDataProperties.swift in Sources */,
+				5DF78F161D4112EE00F50718 /* AppDelegate.swift in Sources */,
+				5D14C0681D41CE440059ACF5 /* WarrantyCell.swift in Sources */,
+				5D292ED21D432D5E00413BEA /* SummaryViewController.swift in Sources */,
+				5D9326E11D584ECE00DA00B7 /* SaleCell.swift in Sources */,
+				5D9326DF1D57F3E800DA00B7 /* SaleDetailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5DF78F191D4112EE00F50718 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DF78F1A1D4112EE00F50718 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5DF78F1E1D4112EE00F50718 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DF78F1F1D4112EE00F50718 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5DF78F221D4112EE00F50718 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5DF78F231D4112EE00F50718 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5DF78F251D4112EE00F50718 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Staples Sales/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JoelRorseth.Staples-Sales";
+				PRODUCT_NAME = "Staples Sales";
+			};
+			name = Debug;
+		};
+		5DF78F261D4112EE00F50718 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Staples Sales/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JoelRorseth.Staples-Sales";
+				PRODUCT_NAME = "Staples Sales";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5DF78F0D1D4112EE00F50718 /* Build configuration list for PBXProject "Staples Sales" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DF78F221D4112EE00F50718 /* Debug */,
+				5DF78F231D4112EE00F50718 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DF78F241D4112EE00F50718 /* Build configuration list for PBXNativeTarget "Staples Sales" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DF78F251D4112EE00F50718 /* Debug */,
+				5DF78F261D4112EE00F50718 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5D02E77C1D4C0E2E0056D2D9 /* MyStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5D02E77D1D4C0E2E0056D2D9 /* MyStore.xcdatamodel */,
+			);
+			currentVersion = 5D02E77D1D4C0E2E0056D2D9 /* MyStore.xcdatamodel */;
+			path = MyStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5DF78F0A1D4112EE00F50718 /* Project object */;
+}

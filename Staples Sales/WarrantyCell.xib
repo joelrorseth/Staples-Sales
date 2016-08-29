@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WarrantyCell" rowHeight="75" id="zkT-vl-Jgz" customClass="WarrantyCell" customModule="Staples_Sales" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="75"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zkT-vl-Jgz" id="PxJ-UD-T67">
+                <rect key="frame" x="0.0" y="0.0" width="400" height="74.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZF-yq-sSW">
+                        <rect key="frame" x="304" y="21" width="80" height="32"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="DLW-yY-Zwx"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                        <state key="normal" title="$999.99">
+                            <color key="titleColor" red="0.75403733220000002" green="0.81430893459999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="warrantySelected:" destination="zkT-vl-Jgz" eventType="touchUpInside" id="xtM-3V-eTF"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Replacement Plan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8Z-9n-Zs0">
+                        <rect key="frame" x="18" y="22" width="184" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="184" id="HOl-yE-lPK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 Years" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2w-Si-v9h">
+                        <rect key="frame" x="18" y="42" width="184" height="21"/>
+                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="S8Z-9n-Zs0" firstAttribute="leading" secondItem="C2w-Si-v9h" secondAttribute="leading" id="6U4-cC-2eh"/>
+                    <constraint firstItem="KZF-yq-sSW" firstAttribute="centerY" secondItem="PxJ-UD-T67" secondAttribute="centerY" id="9ax-Bh-p65"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="C2w-Si-v9h" secondAttribute="bottom" constant="3.5" id="Cu1-A6-6fl"/>
+                    <constraint firstItem="S8Z-9n-Zs0" firstAttribute="leading" secondItem="PxJ-UD-T67" secondAttribute="leadingMargin" constant="10" id="Ewn-iS-vVL"/>
+                    <constraint firstItem="C2w-Si-v9h" firstAttribute="top" secondItem="PxJ-UD-T67" secondAttribute="topMargin" constant="34" id="Qae-Pu-4qG"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="S8Z-9n-Zs0" secondAttribute="bottom" constant="23.5" id="bni-ce-jrm"/>
+                    <constraint firstItem="S8Z-9n-Zs0" firstAttribute="top" secondItem="PxJ-UD-T67" secondAttribute="topMargin" constant="14" id="hmg-aG-gfi"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="KZF-yq-sSW" secondAttribute="trailing" constant="8" id="jbW-He-QrA"/>
+                    <constraint firstItem="S8Z-9n-Zs0" firstAttribute="trailing" secondItem="C2w-Si-v9h" secondAttribute="trailing" id="m5V-Wu-vcK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="8"/>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="detailLabel" destination="C2w-Si-v9h" id="3Ld-vM-TxM"/>
+                <outlet property="planTypeLabel" destination="S8Z-9n-Zs0" id="WR4-d2-1M1"/>
+                <outlet property="priceButton" destination="KZF-yq-sSW" id="5wx-yK-n6j"/>
+            </connections>
+            <point key="canvasLocation" x="307" y="325.5"/>
+        </tableViewCell>
+    </objects>
+</document>

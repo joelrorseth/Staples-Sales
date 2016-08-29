@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="staples" translatesAutoresizingMaskIntoConstraints="NO" id="JEI-dG-Cr6">
+                                <rect key="frame" x="175" y="144" width="250" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ezf-vZ-SdQ"/>
+                                    <constraint firstAttribute="width" constant="250" id="lz0-kD-btD"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08R-0p-lNT">
+                                <rect key="frame" x="20" y="550" width="560" height="45"/>
+                                <string key="text">Created independently by Joel Rorseth. Not a licensed product of the Staples Company or its subsidiaries. Staples Sales is not officially affiliated with the Staples company.</string>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                <color key="textColor" red="0.53934294871794863" green="0.53934294871794863" blue="0.53934294871794863" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SALES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ah2-Zw-Vvw">
+                                <rect key="frame" x="228.5" y="191" width="144" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="144" id="2Uz-Hi-cKm"/>
+                                    <constraint firstAttribute="height" constant="40" id="B8S-SS-KTl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="41"/>
+                                <color key="textColor" red="0.75403733220000002" green="0.81430893459999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="08R-0p-lNT" secondAttribute="bottom" constant="5" id="5Wz-QY-ZaV"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="08R-0p-lNT" secondAttribute="leading" id="BDu-gf-pjf"/>
+                            <constraint firstItem="JEI-dG-Cr6" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="124" id="RoJ-c4-gO7"/>
+                            <constraint firstItem="ah2-Zw-Vvw" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="euf-1E-jQh"/>
+                            <constraint firstItem="JEI-dG-Cr6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="g0D-bj-ikf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="08R-0p-lNT" secondAttribute="trailing" id="mJV-Gj-ua2"/>
+                            <constraint firstItem="ah2-Zw-Vvw" firstAttribute="top" secondItem="JEI-dG-Cr6" secondAttribute="bottom" constant="-3" id="wfi-jv-bFU"/>
+                            <constraint firstItem="08R-0p-lNT" firstAttribute="top" relation="lessThanOrEqual" secondItem="ah2-Zw-Vvw" secondAttribute="bottom" constant="319.5" id="yGn-KP-K64"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="staples" width="1786" height="363"/>
+    </resources>
+</document>

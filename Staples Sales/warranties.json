@@ -1,0 +1,1258 @@
+{
+    "Repair": [
+               {
+               "category": "Laptop",
+               "period": 1,
+               "price": 44.99,
+               "sku": 420911,
+               "low": 0.00,
+               "high": 249.99
+               },
+               {
+               "category": "Laptop",
+               "period": 1,
+               "price": 59.99,
+               "sku": 731505,
+               "low": 250.00,
+               "high": 349.99
+               },
+               {
+               "category": "Laptop",
+               "period": 1,
+               "price": 79.99,
+               "sku": 731510,
+               "low": 350.00,
+               "high": 499.99
+               },
+               {
+               "category": "Laptop",
+               "period": 1,
+               "price": 129.99,
+               "sku": 731513,
+               "low": 500.00,
+               "high": 999.99
+               },
+               {
+               "category": "Laptop",
+               "period": 1,
+               "price": 179.99,
+               "sku": 731517,
+               "low": 1000.00,
+               "high": 10000.00
+               },
+               
+               
+               
+               {
+               "category": "Laptop",
+               "period": 2,
+               "price": 59.99,
+               "sku": 731523,
+               "low": 0.00,
+               "high": 249.99
+               },
+               {
+               "category": "Laptop",
+               "period": 2,
+               "price": 69.99,
+               "sku": 774809,
+               "low": 250.00,
+               "high": 349.99
+               },
+               {
+               "category": "Laptop",
+               "period": 2,
+               "price": 99.99,
+               "sku": 774854,
+               "low": 350.00,
+               "high": 499.99
+               },
+               {
+               "category": "Laptop",
+               "period": 2,
+               "price": 149.99,
+               "sku": 774855,
+               "low": 500.00,
+               "high": 999.99
+               },
+               {
+               "category": "Laptop",
+               "period": 2,
+               "price": 199.99,
+               "sku": 774812,
+               "low": 1000.00,
+               "high": 10000.00
+               },
+               
+               
+               
+               {
+               "category": "Desktop",
+               "period": 1,
+               "price": 59.99,
+               "sku": 731549,
+               "low": 100.00,
+               "high": 499.99
+               },
+               {
+               "category": "Desktop",
+               "period": 1,
+               "price": 99.99,
+               "sku": 731554,
+               "low": 500.00,
+               "high": 999.99
+               },
+               {
+               "category": "Desktop",
+               "period": 1,
+               "price": 149.99,
+               "sku": 731561,
+               "low": 1000.00,
+               "high": 1499.99
+               },
+               {
+               "category": "Desktop",
+               "period": 1,
+               "price": 199.99,
+               "sku": 731562,
+               "low": 1500.00,
+               "high": 10000.00
+               },
+               
+               
+               
+               {
+               "category": "Desktop",
+               "period": 2,
+               "price": 64.99,
+               "sku": 503101,
+               "low": 100.00,
+               "high": 499.99
+               },
+               {
+               "category": "Desktop",
+               "period": 2,
+               "price": 109.99,
+               "sku": 503104,
+               "low": 500.00,
+               "high": 999.99
+               },
+               {
+               "category": "Desktop",
+               "period": 2,
+               "price": 164.99,
+               "sku": 503105,
+               "low": 1000.00,
+               "high": 1499.99
+               },
+               {
+               "category": "Desktop",
+               "period": 2,
+               "price": 219.99,
+               "sku": 503106,
+               "low": 1500.00,
+               "high": 10000.00
+               },
+               
+               
+               
+               {
+               "category": "Landline Phone",
+               "period": 1,
+               "price": 49.99,
+               "sku": 732166,
+               "low": 250.00,
+               "high": 10000.00
+               },
+               {
+               "category": "Landline Phone",
+               "period": 2,
+               "price": 69.99,
+               "sku": 732174,
+               "low": 250.00,
+               "high": 10000.00
+               },
+               
+               
+               
+               {
+               "category": "Camera",
+               "period": 1,
+               "price": 49.99,
+               "sku": 731893,
+               "low": 250.00,
+               "high": 349.99
+               },
+               {
+               "category": "Camera",
+               "period": 1,
+               "price": 59.99,
+               "sku": 731919,
+               "low": 350.00,
+               "high": 499.99
+               },
+               {
+               "category": "Camera",
+               "period": 1,
+               "price": 69.99,
+               "sku": 731935,
+               "low": 500.00,
+               "high": 749.99
+               },
+               {
+               "category": "Camera",
+               "period": 1,
+               "price": 89.99,
+               "sku": 731939,
+               "low": 750.00,
+               "high": 999.99
+               },
+               {
+               "category": "Camera",
+               "period": 1,
+               "price": 109.99,
+               "sku": 731943,
+               "low": 1000.00,
+               "high": 1999.99
+               },
+               {
+               "category": "Camera",
+               "period": 1,
+               "price": 149.99,
+               "sku": 731950,
+               "low": 2000.00,
+               "high": 10000
+               },
+               
+               
+               
+               {
+               "category": "Camera",
+               "period": 2,
+               "price": 69.99,
+               "sku": 731976,
+               "low": 250.00,
+               "high": 349.99
+               },
+               {
+               "category": "Camera",
+               "period": 2,
+               "price": 79.99,
+               "sku": 731989,
+               "low": 350.00,
+               "high": 499.99
+               },
+               {
+               "category": "Camera",
+               "period": 2,
+               "price": 109.99,
+               "sku": 731992,
+               "low": 500.00,
+               "high": 749.99
+               },
+               {
+               "category": "Camera",
+               "period": 2,
+               "price": 144.99,
+               "sku": 731994,
+               "low": 750.00,
+               "high": 999.99
+               },
+               {
+               "category": "Camera",
+               "period": 2,
+               "price": 179.99,
+               "sku": 732004,
+               "low": 1000.00,
+               "high": 1999.99
+               },
+               {
+               "category": "Camera",
+               "period": 2,
+               "price": 239.99,
+               "sku": 732008,
+               "low": 2000.00,
+               "high": 10000.00
+               },
+               
+               
+               
+               {
+               "category": "MP3 Player",
+               "period": 1,
+               "price": 49.99,
+               "sku": 732016,
+               "low": 250.00,
+               "high": 10000.00
+               },
+               {
+               "category": "MP3 Player",
+               "period": 2,
+               "price": 69.99,
+               "sku": 732160,
+               "low": 250.00,
+               "high": 10000.00
+               },
+               
+               
+               
+               {
+               "category": "Printer",
+               "period": 1,
+               "price": 59.99,
+               "sku": 732183,
+               "low": 250.00,
+               "high": 499.99
+               },
+               {
+               "category": "Printer",
+               "period": 1,
+               "price": 79.99,
+               "sku": 732184,
+               "low": 500.00,
+               "high": 999.99
+               },
+               {
+               "category": "Printer",
+               "period": 1,
+               "price": 129.99,
+               "sku": 732186,
+               "low": 1000.00,
+               "high": 2499.99
+               },
+               {
+               "category": "Printer",
+               "period": 1,
+               "price": 229.99,
+               "sku": 732189,
+               "low": 2500.00,
+               "high": 4999.99
+               },
+               {
+               "category": "Printer",
+               "period": 1,
+               "price": 449.99,
+               "sku": 732191,
+               "low": 5000.00,
+               "high": 10000.00
+               },
+               
+               
+               
+               {
+               "category": "Printer",
+               "period": 2,
+               "price": 79.99,
+               "sku": 732196,
+               "low": 250.00,
+               "high": 499.99
+               },
+               {
+               "category": "Printer",
+               "period": 2,
+               "price": 99.99,
+               "sku": 732201,
+               "low": 500.00,
+               "high": 999.99
+               },
+               {
+               "category": "Printer",
+               "period": 2,
+               "price": 159.99,
+               "sku": 732205,
+               "low": 1000.00,
+               "high": 2499.99
+               },
+               {
+               "category": "Printer",
+               "period": 2,
+               "price": 289.99,
+               "sku": 732206,
+               "low": 2500.00,
+               "high": 4999.99
+               },
+               {
+               "category": "Printer",
+               "period": 2,
+               "price": 549.99,
+               "sku": 732207,
+               "low": 5000.00,
+               "high": 10000.00
+               },
+               
+               
+               
+               {
+               "category": "Shredder",
+               "period": 1,
+               "price": 44.99,
+               "sku": 732259,
+               "low": 250.00,
+               "high": 349.99
+               },
+               {
+               "category": "Shredder",
+               "period": 1,
+               "price": 49.99,
+               "sku": 732274,
+               "low": 350.00,
+               "high": 499.99
+               },
+               {
+               "category": "Shredder",
+               "period": 1,
+               "price": 59.99,
+               "sku": 732306,
+               "low": 500.00,
+               "high": 10000.00
+               },
+               
+               
+               
+               {
+               "category": "Shredder",
+               "period": 2,
+               "price": 64.99,
+               "sku": 732312,
+               "low": 250.00,
+               "high": 349.99
+               },
+               {
+               "category": "Shredder",
+               "period": 2,
+               "price": 79.99,
+               "sku": 732313,
+               "low": 350.00,
+               "high": 499.99
+               },
+               {
+               "category": "Shredder",
+               "period": 2,
+               "price": 89.99,
+               "sku": 732315,
+               "low": 500.00,
+               "high": 10000.00
+               },
+               
+               
+               
+               {
+               "category": "Other",
+               "period": 1,
+               "price": 49.99,
+               "sku": 785182,
+               "low": 250.00,
+               "high": 349.99
+               },
+               {
+               "category": "Other",
+               "period": 1,
+               "price": 69.99,
+               "sku": 785183,
+               "low": 350.00,
+               "high": 499.99
+               },
+               {
+               "category": "Other",
+               "period": 1,
+               "price": 99.99,
+               "sku": 785184,
+               "low": 500.00,
+               "high": 749.99
+               },
+               {
+               "category": "Other",
+               "period": 1,
+               "price": 129.99,
+               "sku": 785187,
+               "low": 750.00,
+               "high": 999.99
+               },
+               {
+               "category": "Other",
+               "period": 1,
+               "price": 149.99,
+               "sku": 785190,
+               "low": 1000.00,
+               "high": 1999.99
+               },
+               {
+               "category": "Other",
+               "period": 1,
+               "price": 179.99,
+               "sku": 785197,
+               "low": 2000.00,
+               "high": 3999.99
+               },
+               
+               
+               
+               {
+               "category": "Other",
+               "period": 2,
+               "price": 89.99,
+               "sku": 785213,
+               "low": 250.00,
+               "high": 349.99
+               },
+               {
+               "category": "Other",
+               "period": 2,
+               "price": 99.99,
+               "sku": 785215,
+               "low": 350.00,
+               "high": 499.99
+               },
+               {
+               "category": "Other",
+               "period": 2,
+               "price": 129.99,
+               "sku": 785216,
+               "low": 500.00,
+               "high": 749.99
+               },
+               {
+               "category": "Other",
+               "period": 2,
+               "price": 169.99,
+               "sku": 785217,
+               "low": 750.00,
+               "high": 999.99
+               },
+               {
+               "category": "Other",
+               "period": 2,
+               "price": 199.99,
+               "sku": 785218,
+               "low": 1000.00,
+               "high": 1999.99
+               },
+               {
+               "category": "Other",
+               "period": 2,
+               "price": 249.99,
+               "sku": 785219,
+               "low": 2000.00,
+               "high": 3999.99
+               }
+               ],
+    
+    
+    "Replacement": [
+                    
+                    {
+                    "category": "Tablet",
+                    "period": 1,
+                    "price": 19.99,
+                    "sku": 101943,
+                    "low": 0.00,
+                    "high": 129.99
+                    },
+                    {
+                    "category": "Tablet",
+                    "period": 1,
+                    "price": 34.99,
+                    "sku": 732317,
+                    "low": 130.00,
+                    "high": 249.99
+                    },
+                    {
+                    "category": "Tablet",
+                    "period": 1,
+                    "price": 49.99,
+                    "sku": 958289,
+                    "low": 250.00,
+                    "high": 549.99
+                    },
+                    {
+                    "category": "Tablet",
+                    "period": 1,
+                    "price": 79.99,
+                    "sku": 732321,
+                    "low": 550.00,
+                    "high": 999.99
+                    },
+                    {
+                    "category": "Tablet",
+                    "period": 1,
+                    "price": 129.99,
+                    "sku": 202345,
+                    "low": 1000.00,
+                    "high": 10000.00
+                    },
+                    
+                    
+                    
+                    {
+                    "category": "eReader",
+                    "period": 1,
+                    "price": 4.99,
+                    "sku": 732348,
+                    "low": 0.00,
+                    "high": 49.99
+                    },
+                    {
+                    "category": "eReader",
+                    "period": 1,
+                    "price": 9.99,
+                    "sku": 732370,
+                    "low": 50.00,
+                    "high": 99.99
+                    },
+                    {
+                    "category": "eReader",
+                    "period": 1,
+                    "price": 19.99,
+                    "sku": 732382,
+                    "low": 100.00,
+                    "high": 149.99
+                    },
+                    {
+                    "category": "eReader",
+                    "period": 1,
+                    "price": 29.99,
+                    "sku": 732384,
+                    "low": 150.00,
+                    "high": 199.99
+                    },
+                    {
+                    "category": "eReader",
+                    "period": 1,
+                    "price": 39.99,
+                    "sku": 732388,
+                    "low": 200.00,
+                    "high": 249.99
+                    },
+                    
+                    
+                    
+                    {
+                    "category": "Camera",
+                    "period": 1,
+                    "price": 4.99,
+                    "sku": 732390,
+                    "low": 0.00,
+                    "high": 49.99
+                    },
+                    {
+                    "category": "Camera",
+                    "period": 1,
+                    "price": 9.99,
+                    "sku": 732391,
+                    "low": 50.00,
+                    "high": 99.99
+                    },
+                    {
+                    "category": "Camera",
+                    "period": 1,
+                    "price": 19.99,
+                    "sku": 732392,
+                    "low": 100.00,
+                    "high": 149.99
+                    },
+                    {
+                    "category": "Camera",
+                    "period": 1,
+                    "price": 29.99,
+                    "sku": 732394,
+                    "low": 150.00,
+                    "high": 199.99
+                    },
+                    {
+                    "category": "Camera",
+                    "period": 1,
+                    "price": 39.99,
+                    "sku": 732395,
+                    "low": 200.00,
+                    "high": 249.99
+                    },
+                    
+                    
+                    
+                    
+                    
+                    
+                    {
+                    "category": "MP3 Player",
+                    "period": 1,
+                    "price": 4.99,
+                    "sku": 732403,
+                    "low": 0.00,
+                    "high": 49.99
+                    },
+                    {
+                    "category": "MP3 Player",
+                    "period": 1,
+                    "price": 9.99,
+                    "sku": 732404,
+                    "low": 50.00,
+                    "high": 99.99
+                    },
+                    {
+                    "category": "MP3 Player",
+                    "period": 1,
+                    "price": 19.99,
+                    "sku": 732409,
+                    "low": 100.00,
+                    "high": 149.99
+                    },
+                    {
+                    "category": "MP3 Player",
+                    "period": 1,
+                    "price": 29.99,
+                    "sku": 732411,
+                    "low": 150.00,
+                    "high": 199.99
+                    },
+                    {
+                    "category": "MP3 Player",
+                    "period": 1,
+                    "price": 39.99,
+                    "sku": 732418,
+                    "low": 200.00,
+                    "high": 249.99
+                    },
+                    
+                    
+                    
+                    
+                    
+                    {
+                    "category": "Shredder",
+                    "period": 1,
+                    "price": 4.99,
+                    "sku": 732472,
+                    "low": 0.00,
+                    "high": 49.99
+                    },
+                    {
+                    "category": "Shredder",
+                    "period": 1,
+                    "price": 9.99,
+                    "sku": 732478,
+                    "low": 50.00,
+                    "high": 99.99
+                    },
+                    {
+                    "category": "Shredder",
+                    "period": 1,
+                    "price": 19.99,
+                    "sku": 732480,
+                    "low": 100.00,
+                    "high": 149.99
+                    },
+                    {
+                    "category": "Shredder",
+                    "period": 1,
+                    "price": 29.99,
+                    "sku": 732485,
+                    "low": 150.00,
+                    "high": 199.99
+                    },
+                    {
+                    "category": "Shredder",
+                    "period": 1,
+                    "price": 39.99,
+                    "sku": 732495,
+                    "low": 200.00,
+                    "high": 249.99
+                    },
+                    
+                    
+                    
+                    
+                    
+                    {
+                    "category": "Printer",
+                    "period": 1,
+                    "price": 4.99,
+                    "sku": 732445,
+                    "low": 0.00,
+                    "high": 49.99
+                    },
+                    {
+                    "category": "Printer",
+                    "period": 1,
+                    "price": 9.99,
+                    "sku": 732450,
+                    "low": 50.00,
+                    "high": 99.99
+                    },
+                    {
+                    "category": "Printer",
+                    "period": 1,
+                    "price": 19.99,
+                    "sku": 732460,
+                    "low": 100.00,
+                    "high": 149.99
+                    },
+                    {
+                    "category": "Printer",
+                    "period": 1,
+                    "price": 29.99,
+                    "sku": 732461,
+                    "low": 150.00,
+                    "high": 199.99
+                    },
+                    {
+                    "category": "Printer",
+                    "period": 1,
+                    "price": 39.99,
+                    "sku": 732470,
+                    "low": 200.00,
+                    "high": 249.99
+                    },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    {
+                    "category": "Landline Phone",
+                    "period": 1,
+                    "price": 4.99,
+                    "sku": 732420,
+                    "low": 0.00,
+                    "high": 49.99
+                    },
+                    {
+                    "category": "Landline Phone",
+                    "period": 1,
+                    "price": 9.99,
+                    "sku": 732423,
+                    "low": 50.00,
+                    "high": 99.99
+                    },
+                    {
+                    "category": "Landline Phone",
+                    "period": 1,
+                    "price": 19.99,
+                    "sku": 732424,
+                    "low": 100.00,
+                    "high": 149.99
+                    },
+                    {
+                    "category": "Landline Phone",
+                    "period": 1,
+                    "price": 29.99,
+                    "sku": 732435,
+                    "low": 150.00,
+                    "high": 199.99
+                    },
+                    {
+                    "category": "Landline Phone",
+                    "period": 1,
+                    "price": 39.99,
+                    "sku": 732440,
+                    "low": 200.00,
+                    "high": 249.99
+                    },
+                    
+                    
+                    
+                    
+                    {
+                    "category": "Other",
+                    "period": 1,
+                    "price": 4.99,
+                    "sku": 785241,
+                    "low": 0.00,
+                    "high": 49.99
+                    },
+                    {
+                    "category": "Other",
+                    "period": 1,
+                    "price": 9.99,
+                    "sku": 502952,
+                    "low": 50.00,
+                    "high": 99.99
+                    },
+                    {
+                    "category": "Other",
+                    "period": 1,
+                    "price": 19.99,
+                    "sku": 502953,
+                    "low": 100.00,
+                    "high": 149.99
+                    },
+                    {
+                    "category": "Other",
+                    "period": 1,
+                    "price": 29.99,
+                    "sku": 785244,
+                    "low": 150.00,
+                    "high": 199.99
+                    },
+                    {
+                    "category": "Other",
+                    "period": 1,
+                    "price": 39.99,
+                    "sku": 785245,
+                    "low": 200.00,
+                    "high": 249.99
+                    },
+                    ],
+    
+    "Accidental": [
+                   
+                   {
+                   "category": "Laptop",
+                   "period": 2,
+                   "price": 34.99,
+                   "sku": 756034,
+                   "low": 0.00,
+                   "high": 249.99
+                   },
+                   {
+                   "category": "Laptop",
+                   "period": 2,
+                   "price": 39.99,
+                   "sku": 731531,
+                   "low": 250.00,
+                   "high": 499.99
+                   },
+                   {
+                   "category": "Laptop",
+                   "period": 2,
+                   "price": 79.99,
+                   "sku": 785164,
+                   "low": 500.00,
+                   "high": 999.99
+                   },
+                   {
+                   "category": "Laptop",
+                   "period": 2,
+                   "price": 129.99,
+                   "sku": 785167,
+                   "low": 1000.00,
+                   "high": 10000.00
+                   },
+                   
+                   
+                   
+                   {
+                   "category": "Laptop",
+                   "period": 3,
+                   "price": 44.99,
+                   "sku": 785168,
+                   "low": 0.00,
+                   "high": 249.99
+                   },
+                   {
+                   "category": "Laptop",
+                   "period": 3,
+                   "price": 49.99,
+                   "sku": 731536,
+                   "low": 250.00,
+                   "high": 499.99
+                   },
+                   {
+                   "category": "Laptop",
+                   "period": 3,
+                   "price": 99.99,
+                   "sku": 816911,
+                   "low": 500.00,
+                   "high": 999.99
+                   },
+                   {
+                   "category": "Laptop",
+                   "period": 3,
+                   "price": 149.99,
+                   "sku": 816914,
+                   "low": 1000.00,
+                   "high": 10000.00
+                   },
+                   
+                   
+                   
+                   
+                   {
+                   "category": "Desktop",
+                   "period": 2,
+                   "price": 39.99,
+                   "sku": 39294,
+                   "low": 100.00,
+                   "high": 499.99
+                   },
+                   {
+                   "category": "Desktop",
+                   "period": 2,
+                   "price": 99.99,
+                   "sku": 47548,
+                   "low": 500.00,
+                   "high": 999.99
+                   },
+                   {
+                   "category": "Desktop",
+                   "period": 2,
+                   "price": 149.99,
+                   "sku": 47549,
+                   "low": 1000.00,
+                   "high": 1499.99
+                   },
+                   {
+                   "category": "Desktop",
+                   "period": 2,
+                   "price": 199.99,
+                   "sku": 47550,
+                   "low": 1500.00,
+                   "high": 10000.00
+                   },
+                   
+                   
+                   
+                   
+                   {
+                   "category": "Desktop",
+                   "period": 3,
+                   "price": 44.99,
+                   "sku": 47551,
+                   "low": 100.00,
+                   "high": 499.99
+                   },
+                   {
+                   "category": "Desktop",
+                   "period": 3,
+                   "price": 109.99,
+                   "sku": 47552,
+                   "low": 500.00,
+                   "high": 999.99
+                   },
+                   {
+                   "category": "Desktop",
+                   "period": 3,
+                   "price": 164.99,
+                   "sku": 47553,
+                   "low": 1000.00,
+                   "high": 1499.99
+                   },
+                   {
+                   "category": "Desktop",
+                   "period": 3,
+                   "price": 219.99,
+                   "sku": 47554,
+                   "low": 1500.00,
+                   "high": 10000.00
+                   },
+                   
+                   
+                   
+                   
+                   {
+                   "category": "Camera",
+                   "period": 2,
+                   "price": 39.99,
+                   "sku": 785176,
+                   "low": 250.00,
+                   "high": 499.99
+                   },
+                   {
+                   "category": "Camera",
+                   "period": 2,
+                   "price": 49.99,
+                   "sku": 731829,
+                   "low": 500.00,
+                   "high": 10000.00
+                   },
+                   
+                   {
+                   "category": "Camera",
+                   "period": 3,
+                   "price": 59.99,
+                   "sku": 731832,
+                   "low": 250.00,
+                   "high": 499.99
+                   },
+                   {
+                   "category": "Camera",
+                   "period": 3,
+                   "price": 69.99,
+                   "sku": 785177,
+                   "low": 500.00,
+                   "high": 10000.00
+                   },
+                   
+                   
+                   
+                   
+                   
+                   {
+                   "category": "MP3 Player",
+                   "period": 2,
+                   "price": 39.99,
+                   "sku": 731844,
+                   "low": 250.00,
+                   "high": 10000.00
+                   },
+                   {
+                   "category": "MP3 Player",
+                   "period": 3,
+                   "price": 59.99,
+                   "sku": 731851,
+                   "low": 250.00,
+                   "high": 10000.00
+                   },
+                   
+                   
+                   
+                   
+                   
+                   
+                   {
+                   "category": "Tablet",
+                   "period": 2,
+                   "price": 19.99,
+                   "sku": 101945,
+                   "low": 0.00,
+                   "high": 129.99
+                   },
+                   {
+                   "category": "Tablet",
+                   "period": 2,
+                   "price": 34.99,
+                   "sku": 731794,
+                   "low": 130.00,
+                   "high": 249.99
+                   },
+                   {
+                   "category": "Tablet",
+                   "period": 2,
+                   "price": 44.99,
+                   "sku": 958291,
+                   "low": 250.00,
+                   "high": 549.99
+                   },
+                   {
+                   "category": "Tablet",
+                   "period": 2,
+                   "price": 59.99,
+                   "sku": 731795,
+                   "low": 550.00,
+                   "high": 999.99
+                   },
+                   {
+                   "category": "Tablet",
+                   "period": 2,
+                   "price": 99.99,
+                   "sku": 202346,
+                   "low": 1000.00,
+                   "high": 10000.00
+                   },
+                   
+                   
+                   
+                   
+                   
+                   {
+                   "category": "eReader",
+                   "period": 2,
+                   "price": 19.99,
+                   "sku": 731802,
+                   "low": 0.00,
+                   "high": 149.99
+                   },
+                   {
+                   "category": "eReader",
+                   "period": 2,
+                   "price": 29.99,
+                   "sku": 731803,
+                   "low": 150.00,
+                   "high": 249.99
+                   },
+                   
+                   
+                   
+                   
+                   
+                   {
+                   "category": "Camera",
+                   "period": 2,
+                   "price": 19.99,
+                   "sku": 785174,
+                   "low": 0.00,
+                   "high": 149.99
+                   },
+                   {
+                   "category": "Camera",
+                   "period": 2,
+                   "price": 29.99,
+                   "sku": 731826,
+                   "low": 150.00,
+                   "high": 249.99
+                   },
+                   
+                   
+                   
+                   
+                   
+                   {
+                   "category": "MP3 Player",
+                   "period": 2,
+                   "price": 19.99,
+                   "sku": 731835,
+                   "low": 0.00,
+                   "high": 149.99
+                   },
+                   {
+                   "category": "MP3 Player",
+                   "period": 2,
+                   "price": 29.99,
+                   "sku": 731837,
+                   "low": 150.00,
+                   "high": 249.99
+                   },
+                   
+    ],
+    
+    
+    
+    "AppleCare": [
+    
+                  {
+                  "category": "Macbook Pro 15\"/17\"",
+                  "period": 3,
+                  "price": 379.00,
+                  "sku": 100591,
+                  "low": 0.00,
+                  "high": 10000.00
+                  },
+                  {
+                  "category": "Macbook Under 15\"",
+                  "period": 3,
+                  "price": 279.00,
+                  "sku": 100589,
+                  "low": 0.00,
+                  "high": 10000.00
+                  },
+                  {
+                  "category": "iMac",
+                  "period": 3,
+                  "price": 199.00,
+                  "sku": 100593,
+                  "low": 0.00,
+                  "high": 10000.00
+                  },
+                  {
+                  "category": "Mac Mini",
+                  "period": 3,
+                  "price": 119.00,
+                  "sku": 100600,
+                  "low": 0.00,
+                  "high": 10000.00
+                  },
+                  {
+                  "category": "iPad",
+                  "period": 3,
+                  "price": 99.00,
+                  "sku": 100587,
+                  "low": 0.00,
+                  "high": 10000.00
+                  },
+
+    ]
+    
+}
+
