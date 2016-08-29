@@ -2,7 +2,7 @@
 A convenient sales tracking and quoting application for iPhone, tailored for sales associates of Staples Canada. 
 
 ## Overview
-Staples Sales provides an organized and extremely simple interface to quickly estimate your tech sale. The app will *eleminate* the wasted time combing through Staples pamphlets, by calculating all warranty plans you could possibly attach to any given product. Your sale can be quickly put together in seconds, giving you all the totals and quick details you need to make the sale on the spot. Once finalized, your sales are recorded, sorted and stored with eachother. At any time, you can retrieve the details of any sale you have made. Furthermore, your daily overall and warranty sales are tracked individually, and can be compared side by side to your figures since day one.
+Staples Sales provides an organized and extremely simple interface to quickly estimate your tech sale. The app will *eliminate* the wasted time combing through Staples pamphlets, by calculating all warranty plans you could possibly attach to any given product. Your sale can be quickly put together in seconds, giving you all the totals and quick details you need to make the sale on the spot. Once finalized, your sales are recorded, sorted and stored with eachother. At any time, you can retrieve the details of any sale you have made. Furthermore, your daily overall and warranty sales are tracked individually, and can be compared side by side to your figures since day one.
 
 
 ## Usage
