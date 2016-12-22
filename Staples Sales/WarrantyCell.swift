@@ -35,11 +35,11 @@ class WarrantyCell: UITableViewCell {
         if !priceAdded {
             
             // Let delegate handle protocol method
-            delegate?.priceButtonTapped(self)
+            delegate?.priceButtonTapped(cell: self)
             priceAdded = true
         } else {
             
-            delegate?.priceButtonUndo(self)
+            delegate?.priceButtonUndo(cell: self)
             priceAdded = false
         }
     }

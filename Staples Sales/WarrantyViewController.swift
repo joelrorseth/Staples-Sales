@@ -27,16 +27,16 @@ class WarrantyViewController: UITableViewController, WarrantyCellDelegate {
                     self.title = "$\(self.inputPriceString) + \(self.priceFormatter.stringFromNumber(self.warrantiesTotal)!)"
                 })
             } else {
-                UIView.animateWithDuration(0.4, animations: {
+                UIView.animate(withDuration: 0.4, animations: {
                     self.title = "Subtotal: $\(self.inputPriceString)"
                 })
             }
         }
     }
     
-    lazy var priceFormatter: NSNumberFormatter = {
-        let formatter = NSNumberFormatter()
-        formatter.numberStyle = .CurrencyStyle
+    lazy var priceFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.currency
         
         return formatter
     }()
@@ -69,30 +69,30 @@ class WarrantyViewController: UITableViewController, WarrantyCellDelegate {
     // MARK: Table View
     // ==========================================
     // ==========================================
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     // ==========================================
     // ==========================================
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return warrantyOptions.count
     }
     
     // ==========================================
     // ==========================================
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 75
     }
 
     
     // ==========================================
     // ==========================================
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // IMPORTANT: Dequeue a WarrantyCell, set the WarrantyCell's delegate
-        self.tableView.registerNib(UINib(nibName: "WarrantyCell", bundle: nil), forCellReuseIdentifier: "WarrantyCell")
-        let cell = tableView.dequeueReusableCellWithIdentifier("WarrantyCell", forIndexPath: indexPath) as! WarrantyCell
+        self.tableView.register(UINib(nibName: "WarrantyCell", bundle: nil), forCellReuseIdentifier: "WarrantyCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WarrantyCell", for: indexPath) as! WarrantyCell
         cell.delegate = self
         
         // Configure the custom cell using appropriate warranty
@@ -114,15 +114,15 @@ class WarrantyViewController: UITableViewController, WarrantyCellDelegate {
     func loadJSON() {
         
         // Get the url and create an NSData object with it
-        let url = NSBundle.mainBundle().URLForResource("warranties", withExtension: "json")
-        if let data = NSData(contentsOfURL: url!) {
+        let url = Bundle.main.url(forResource: "warranties", withExtension: "json")
+        if let data = NSData(contentsOf: url!) {
             
             do {
-                let object = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+                let object = try JSONSerialization.jsonObject(with: data as Data, options: .allowFragments)
                 
                 // Cast the JSON object to dictionary
                 if let dictionary = object as? [String: AnyObject] {
-                    parseJSON(dictionary)
+                    parseJSON(object: dictionary)
                 }
                 
             } catch {
@@ -176,14 +176,14 @@ class WarrantyViewController: UITableViewController, WarrantyCellDelegate {
     func priceButtonTapped(cell: WarrantyCell) {
         
         // Update warranty total, remove this index from selected list
-        let path = tableView.indexPathForCell(cell)
+        let path = tableView.indexPath(for: cell)
         
         warrantiesTotal += warrantyOptions[(path?.row)!].price
         selectedRows.append((path?.row)!)
         
         // Animate selection
-        UIView.animateWithDuration(0.5, animations: {
-            cell.priceButton.backgroundColor = UIColor.grayColor()
+        UIView.animate(withDuration: 0.5, animations: {
+            cell.priceButton.backgroundColor = UIColor.gray
         })
     }
     
@@ -192,11 +192,11 @@ class WarrantyViewController: UITableViewController, WarrantyCellDelegate {
     func priceButtonUndo(cell: WarrantyCell) {
         
         // Get the index in selectedRows of the previosuly selected row
-        let deselectedPath = tableView.indexPathForCell(cell)
-        let index = selectedRows.indexOf(deselectedPath!.row)
+        let deselectedPath = tableView.indexPath(for: cell)
+        let index = selectedRows.index(of: deselectedPath!.row)
         
         // Delete the selected row from selected rows
-        selectedRows.removeAtIndex(index!)
+        selectedRows.remove(at: index!)
         
         //  Update warranty total
         if selectedRows.isEmpty {
@@ -205,8 +205,8 @@ class WarrantyViewController: UITableViewController, WarrantyCellDelegate {
             warrantiesTotal -= warrantyOptions[(deselectedPath?.row)!].price
         }
         
-        UIView.animateWithDuration(0.5, animations: {
-            cell.priceButton.backgroundColor = UIColor.darkGrayColor()
+        UIView.animate(withDuration: 0.5, animations: {
+            cell.priceButton.backgroundColor = UIColor.darkGray
         })
     }
 }

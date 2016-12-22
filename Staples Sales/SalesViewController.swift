@@ -13,23 +13,23 @@ import CoreData
 // MARK: - SalesViewController
 class SalesViewController: UITableViewController, UISearchBarDelegate {
     
-    lazy var dateFormatter: NSDateFormatter = {
-        let formatter = NSDateFormatter()
+    lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
         formatter.dateFormat = "MMMM d, h:mm a"
         //formatter.dateStyle = .ShortStyle
         //formatter.timeStyle = .MediumStyle
         return formatter
     }()
     
-    lazy var priceFormatter: NSNumberFormatter = {
-        let formatter = NSNumberFormatter()
-        formatter.numberStyle = .CurrencyStyle
+    lazy var priceFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.currency
         
         return formatter
     }()
     
     
-    var fetchedResultsController : NSFetchedResultsController!
+    var fetchedResultsController : NSFetchedResultsController<NSFetchRequestResult>!
     var managedContext: NSManagedObjectContext!
     
     // MARK: View methods
@@ -38,11 +38,11 @@ class SalesViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        tableView.sectionIndexTrackingBackgroundColor = UIColor.yellowColor()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.sectionIndexTrackingBackgroundColor = UIColor.yellow
         
         // Create fetch request and sort descriptor to sort by date
-        let salesFetch = NSFetchRequest(entityName: "Sale")
+        let salesFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Sale")
         let dateSort = NSSortDescriptor(key: "dateGrouping", ascending: false)
         salesFetch.sortDescriptors = [dateSort]
         
@@ -69,26 +69,26 @@ class SalesViewController: UITableViewController, UISearchBarDelegate {
     func configureCell(cell: SaleCell, indexPath: NSIndexPath) {
         
         // Use index path from "cellForRow..." to look up Sale object to display
-        let sale = fetchedResultsController.objectAtIndexPath(indexPath) as! Sale
+        let sale = fetchedResultsController.object(at: indexPath as IndexPath) as! Sale
         //let itemsSet = sale.items!.mutableCopy() as! NSMutableOrderedSet
         
-        cell.titleLabel.text = "\(dateFormatter.stringFromDate(sale.date!))"
+        cell.titleLabel.text = "\(dateFormatter.string(from: sale.date! as Date))"
         cell.subtitleLabel.text = "\(sale.items!.count) items"
-        cell.priceLabel.text = priceFormatter.stringFromNumber(sale.total!)
+        cell.priceLabel.text = priceFormatter.string(from: sale.total!)
     }
     
     
     // MARK: Table view delegation
     // ==========================================
     // ==========================================
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in: UITableView) -> Int {
         return fetchedResultsController.sections!.count
     }
     
-    
+
     // ==========================================
     // ==========================================
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ : UITableView, numberOfRowsInSection section: Int) -> Int {
         
         // Based on how fetched results controller sectioned results, determine # of rows in section
         let sectionInfo = fetchedResultsController.sections![section]
@@ -97,44 +97,44 @@ class SalesViewController: UITableViewController, UISearchBarDelegate {
     
     // ==========================================
     // ==========================================
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("saleCell", forIndexPath: indexPath) as! SaleCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "saleCell", for: indexPath as IndexPath) as! SaleCell
         
-        configureCell(cell, indexPath: indexPath)
+        configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
         return cell
     }
     
     // ==========================================
     // ==========================================
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         // Extract section name from section array (at this passed section)
         let sectionInfo = fetchedResultsController.sections![section]
         return sectionInfo.name
     }
-    
+
     // ==========================================
     // ==========================================
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
     // ==========================================
     // Override to support editing the table view
     // ==========================================
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 
-        if editingStyle == .Delete {
+        if editingStyle == .delete {
             
             // Grab sale at this index path, remove from context
-            let saleToRemove = fetchedResultsController.objectAtIndexPath(indexPath) as! Sale
+            let saleToRemove = fetchedResultsController.object(at: indexPath) as! Sale
             
             for itemToRemove in saleToRemove.items! {
                 print("- Removed an Item object from context")
-                managedContext.deleteObject(itemToRemove as! Item)
+                managedContext.delete(itemToRemove as! Item)
             }
             
-            managedContext.deleteObject(saleToRemove)
+            managedContext.delete(saleToRemove)
             print("- Removed a Sale object from context")
             
             // Save the context now that row has been deleted
@@ -151,7 +151,7 @@ class SalesViewController: UITableViewController, UISearchBarDelegate {
     // MARK: Navigation
     // ==========================================
     // ==========================================
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
@@ -162,12 +162,12 @@ class SalesViewController: UITableViewController, UISearchBarDelegate {
             backItem.title = "Sales"
             navigationItem.backBarButtonItem = backItem
             
-            let sdvc = segue.destinationViewController as! SaleDetailViewController
+            let sdvc = segue.destination as! SaleDetailViewController
             let cell = sender as? SaleCell
-            let path = tableView.indexPathForCell(cell!)
+            let path = tableView.indexPath(for: cell!)
             
             // IMPROTANT: Pass Sale object at path to SaleDetailViewController
-            sdvc.sale = fetchedResultsController.objectAtIndexPath(path!) as! Sale
+            sdvc.sale = fetchedResultsController.object(at: path!) as! Sale
             sdvc.title = dateFormatter.stringFromDate(sdvc.sale.date!)
         }
     }
@@ -180,52 +180,52 @@ extension SalesViewController: NSFetchedResultsControllerDelegate {
     
     // ==========================================
     // ==========================================
-    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
     
     // ==========================================
     // Will run check any time context is saved
     // ==========================================
-    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         
         switch type {
             
             // Handle different changes to results controller's objects
-        case .Insert:
+        case .insert:
             print("NSFetchedResultsControllerDelegate: Object insertion detected")
-            tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Automatic)
+            tableView.insertRows(at: [newIndexPath! as IndexPath], with: .automatic)
             
-        case .Delete:
+        case .delete:
             print("NSFetchedResultsControllerDelegate: Object deletion detected")
-            tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Automatic)
+            tableView.deleteRows(at: [indexPath! as IndexPath], with: .automatic)
             
-        case .Update:
+        case .update:
             print("NSFetchedResultsControllerDelegate: Object update detected")
-            let cell = tableView.cellForRowAtIndexPath(indexPath!) as! SaleCell
-            configureCell(cell, indexPath: indexPath!)
+            let cell = tableView.cellForRow(at: indexPath! as IndexPath) as! SaleCell
+            configureCell(cell: cell, indexPath: indexPath!)
             
-        case .Move:
+        case .move:
             print("FNSFetchedResultsControllerDelegate: Object movement detected")
-            tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Automatic)
-            tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Automatic)
+            tableView.deleteRows(at: [indexPath! as IndexPath], with: .automatic)
+            tableView.insertRows(at: [newIndexPath! as IndexPath], with: .automatic)
         }
     }
     
     // ==========================================
     // Fires when a section is added or deleted
     // ==========================================
-    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
+    func controller(controller: NSFetchedResultsController<NSFetchRequestResult>, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
         
         let indexSet = NSIndexSet(index: sectionIndex)
         
         switch type {
             
-        case .Insert:
-            tableView.insertSections(indexSet, withRowAnimation: .Automatic)
+        case .insert:
+            tableView.insertSections(indexSet as IndexSet, with: .automatic)
             
-        case .Delete:
-            tableView.deleteSections(indexSet, withRowAnimation: .Automatic)
+        case .delete:
+            tableView.deleteSections(indexSet as IndexSet, with: .automatic)
             print("- Section deleted")
             
         default:
@@ -235,7 +235,7 @@ extension SalesViewController: NSFetchedResultsControllerDelegate {
     
     // ==========================================
     // ==========================================
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
     }
 }

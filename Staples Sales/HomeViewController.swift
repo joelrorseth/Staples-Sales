@@ -29,19 +29,19 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         // Upon app startup, provide 13% tax default if settings havent been modified
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if (defaults.integerForKey("Tax") == 0) {
-            defaults.setInteger(13, forKey: "Tax")
+        let defaults = UserDefaults.standard
+        if (defaults.integer(forKey: "Tax") == 0) {
+            defaults.set(13, forKey: "Tax")
         }
         
         // The properties of the separators we will add to buttons
-        let color = UIColor.lightGrayColor()
+        let color = UIColor.lightGray
         let width: CGFloat = 0.7
         
         // Call extension functions to add a workaround 'separator' in between buttons
-        newSaleButton.addTopBorderWithColor(color, width: width)
-        mySalesButton.addTopBorderWithColor(color, width: width)
-        myProfileButton.addTopBorderWithColor(color, width: width)
+        newSaleButton.addTopBorderWithColor(color: color, width: width)
+        mySalesButton.addTopBorderWithColor(color: color, width: width)
+        myProfileButton.addTopBorderWithColor(color: color, width: width)
         
         setupNavigationBar()
     }
@@ -49,14 +49,14 @@ class HomeViewController: UIViewController {
     // ==========================================
     // Check for lost Item objects not attached
     // ==========================================
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
         var results = [AnyObject]()
-        let fetch = NSFetchRequest(entityName: "Item")
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
         
         // Find all Item objects
         do {
-            try results = managedContext.executeFetchRequest(fetch)
+            try results = managedContext.execute(fetch)
         } catch let error as NSError {
             print(error)
         }
@@ -66,7 +66,7 @@ class HomeViewController: UIViewController {
         for item in results {
             if ((item as! Item).sale == nil) {
                 print("=> \(item.name!) isn't attached to a sale")
-                managedContext.deleteObject(item as! Item)
+                managedContext.delete(item as! Item)
                 
                 saveRequired = true
                 print("=> Item deleted")
@@ -93,13 +93,13 @@ class HomeViewController: UIViewController {
         
         // Setup nav bar itself
         let navBar = self.navigationController?.navigationBar
-        navBar?.barStyle = UIBarStyle.Black
+        navBar?.barStyle = UIBarStyle.black
         navBar?.tintColor = UIColor(red: 192, green: 208, blue: 0, alpha: 1)
-        navBar?.translucent = true
+        navBar?.isTranslucent = true
         
         // Put logo in nav bar
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 34, height: 26))
-        imageView.contentMode = .ScaleAspectFit
+        imageView.contentMode = .scaleAspectFit
         let image = UIImage(named: "staples.png")
         imageView.image = image
         navigationItem.titleView = imageView
@@ -125,24 +125,24 @@ class HomeViewController: UIViewController {
     // MARK: Navigation
     // ==========================================
     // ==========================================
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "createSale" {
             
-            let tvc = segue.destinationViewController as! TechViewController
+            let tvc = segue.destination as! TechViewController
             tvc.managedContext = self.managedContext
         }
         
         if segue.identifier == "showSales" {
             
-            let svc = segue.destinationViewController as! SalesViewController
+            let svc = segue.destination as! SalesViewController
             svc.managedContext = self.managedContext
         }
         
         if segue.identifier == "showProfile" {
             
             // Must pass persistent store coordinator along, used for batch delete request
-            let pvc = segue.destinationViewController as! ProfileViewController
+            let pvc = segue.destination as! ProfileViewController
             pvc.managedContext = self.managedContext
             pvc.psc = self.psc
         }
@@ -156,21 +156,21 @@ extension UIView {
     // ==========================================
     func addTopBorderWithColor(color: UIColor, width: CGFloat) {
         let border = CALayer()
-        border.backgroundColor = color.CGColor
-        border.frame = CGRectMake(0, 0, self.frame.size.width, width)
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: width)
         self.layer.addSublayer(border)
         
         // Modified to also call other methods, fill sides
-        self.addLeftBorderWithColor(color, width: width * 2)
-        self.addRightBorderWithColor(color, width: width )
+        self.addLeftBorderWithColor(color: color, width: width * 2)
+        self.addRightBorderWithColor(color: color, width: width )
     }
     
     // ==========================================
     // ==========================================
     func addRightBorderWithColor(color: UIColor, width: CGFloat) {
         let border = CALayer()
-        border.backgroundColor = color.CGColor
-        border.frame = CGRectMake(self.frame.size.width - width, 0, width, self.frame.size.height)
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x: self.frame.size.width - width, y: 0, width: width, height: self.frame.size.height)
         self.layer.addSublayer(border)
     }
     
@@ -179,8 +179,8 @@ extension UIView {
     // ==========================================
     func addBottomBorderWithColor(color: UIColor, width: CGFloat) {
         let border = CALayer()
-        border.backgroundColor = color.CGColor
-        border.frame = CGRectMake(0, self.frame.size.height - width, self.frame.size.width, width)
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: width)
         self.layer.addSublayer(border)
     }
     
@@ -188,8 +188,8 @@ extension UIView {
     // ==========================================
     func addLeftBorderWithColor(color: UIColor, width: CGFloat) {
         let border = CALayer()
-        border.backgroundColor = color.CGColor
-        border.frame = CGRectMake(0, 0, width, self.frame.size.height)
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x: 0, y: 0, width: width, height: self.frame.size.height)
         self.layer.addSublayer(border)
     }
 }

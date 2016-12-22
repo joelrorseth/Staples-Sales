@@ -26,17 +26,17 @@ class SummaryViewController: UIViewController {
     // Create delegate property for ItemDeletionDelegate
     var delegate: ItemDeletionDelegate?
     var managedContext: NSManagedObjectContext!
-    let defaults = NSUserDefaults.standardUserDefaults()
+    let defaults = UserDefaults.standard
     
-    lazy var priceFormatter: NSNumberFormatter = {
-        let formatter = NSNumberFormatter()
-        formatter.numberStyle = .CurrencyStyle
+    lazy var priceFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.currency
         
         return formatter
     }()
     
-    lazy var dateFormatter: NSDateFormatter = {
-        let formatter = NSDateFormatter()
+    lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
 
         return formatter
@@ -58,12 +58,12 @@ class SummaryViewController: UIViewController {
         summaryTableView.allowsSelection = false
         
         // Add 'separator' between the buttons
-        self.subtotalLabel.addBottomBorderWithColor(UIColor.grayColor(), width: 0.7)
+        self.subtotalLabel.addBottomBorderWithColor(color: UIColor.gray, width: 0.7)
     }
     
     // ==========================================
     // ==========================================
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         updateTotals()
     }
     
@@ -82,7 +82,7 @@ class SummaryViewController: UIViewController {
         
         // Calculate total after tax, round to two decimal places
         total = subtotal
-        let tax = (Double(defaults.integerForKey("Tax")) / 100) + 1.00
+        let tax = (Double(defaults.integer(forKey: "Tax")) / 100) + 1.00
         total *= tax
         total = Double(round(100 * total)/100)
         
@@ -94,15 +94,15 @@ class SummaryViewController: UIViewController {
     // ==========================================
     // Use this opportunity to create sale object
     // ==========================================
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // Create the sale object in Core Data
-        let saleEntity = NSEntityDescription.entityForName("Sale", inManagedObjectContext: managedContext)
-        let sale = Sale(entity: saleEntity!, insertIntoManagedObjectContext: managedContext)
+        let saleEntity = NSEntityDescription.entity(forEntityName: "Sale", in: managedContext)
+        let sale = Sale(entity: saleEntity!, insertInto: managedContext)
         
         
         // Assign sale properties, formatted string date for grouping / sorting sales
-        sale.dateGrouping = dateFormatter.stringFromDate(NSDate())
+        sale.dateGrouping = dateFormatter.string(from: NSDate() as Date)
         sale.date = NSDate()
         sale.total = total as NSNumber
         
@@ -112,7 +112,7 @@ class SummaryViewController: UIViewController {
         
         // Add Item object to the Sale objects items property
         for item in saleItems {
-            itemsSet.addObject(item)
+            itemsSet.add(item)
             print("=> Item added to sale: \(item.name!), $\(item.price!)")
         }
         
@@ -129,20 +129,20 @@ extension SummaryViewController: UITableViewDelegate, UITableViewDataSource {
     
     // ==========================================
     // ==========================================
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return saleItems.count
     }
     
     // ==========================================
     // ==========================================
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = summaryTableView.dequeueReusableCellWithIdentifier("SummaryCell", forIndexPath: indexPath) as! SummaryCell
+        let cell = summaryTableView.dequeueReusableCell(withIdentifier: "SummaryCell", for: indexPath as IndexPath) as! SummaryCell
         let item = saleItems[indexPath.row]
         
         // Use priceFormatter to display prices in cell
         cell.itemLabel.text = item.name
-        cell.itemPrice.text = priceFormatter.stringFromNumber(item.price!)
+        cell.itemPrice.text = priceFormatter.string(from: item.price!)
         
         if (saleItems[indexPath.row].sku! == 0.00) {
             cell.itemSKU.text = "000000"
@@ -155,33 +155,33 @@ extension SummaryViewController: UITableViewDelegate, UITableViewDataSource {
     
     // ==========================================
     // ==========================================
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
-        if editingStyle == .Delete {
+        if editingStyle == .delete {
             
             // Ask delegate (tech view controller) to delete 'item' through this method
             let item = saleItems[indexPath.row]
-            delegate?.itemDeletedFromSale(item)
+            delegate?.itemDeletedFromSale(item: item)
             
             // Remove from the local saleItems array
-            saleItems.removeAtIndex(indexPath.row)
+            saleItems.remove(at: indexPath.row)
             
             // Let the table view delete its row
-            summaryTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            summaryTableView.deleteRows(at: [indexPath as IndexPath], with: .automatic)
             
             // Update totals
             updateTotals()
             
             // If no more items after item removal, exit empty summary screen
             if (saleItems.isEmpty) {
-                self.navigationController?.popViewControllerAnimated(true)
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }
     
     // ==========================================
     // ==========================================
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 }
