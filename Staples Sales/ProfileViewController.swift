@@ -36,9 +36,9 @@ class ProfileViewController: UITableViewController {
         }
     }
     
-    lazy var priceFormatter: NSNumberFormatter = {
-        let formatter = NSNumberFormatter()
-        formatter.numberStyle = .CurrencyStyle
+    lazy var priceFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.currency
         
         return formatter
     }()
@@ -59,7 +59,7 @@ class ProfileViewController: UITableViewController {
         super.viewDidLoad()
         
         // Add button in nav bar to save settings
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: #selector(saveSettings))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveSettings))
         
         retrieveSettings()
         fetchSalesAndUpdate()
@@ -72,10 +72,10 @@ class ProfileViewController: UITableViewController {
     @IBAction func editName(sender: AnyObject) {
         
         // Alert will prompt user for their name
-        let ac = UIAlertController(title: "Enter Your Name", message: nil, preferredStyle: .Alert)
-        ac.addTextFieldWithConfigurationHandler(nil)
+        let ac = UIAlertController(title: "Enter Your Name", message: nil, preferredStyle: .alert)
+        ac.addTextField(configurationHandler: nil)
         
-        let submitAction = UIAlertAction(title: "Submit", style: .Default) { [ac] (action: UIAlertAction!) in
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { [ac] (action: UIAlertAction!) in
             
             // Store name as username locally
             let answer = ac.textFields![0] 
@@ -83,7 +83,7 @@ class ProfileViewController: UITableViewController {
         }
         
         ac.addAction(submitAction)
-        presentViewController(ac, animated: true, completion: nil)
+        self.present(ac, animated: true, completion: nil)
         
         pendingChanges = true
     }
@@ -105,10 +105,10 @@ class ProfileViewController: UITableViewController {
     @IBAction func resetSwitchTriggered(sender: AnyObject) {
         
         let msg = "Your sales record will be permanantly erased. This can not be undone."
-        let ac = UIAlertController(title: "Confirm Reset", message: msg, preferredStyle: .Alert)
+        let ac = UIAlertController(title: "Confirm Reset", message: msg, preferredStyle: .alert)
         
         // Alert to confirm deletion...
-        ac.addAction(UIAlertAction(title: "Confirm", style: .Default, handler: { (action: UIAlertAction!) in
+        ac.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action: UIAlertAction!) in
             
             // Create a batch delete request using NSFetchRequest for Sale and Item objects
             let deleteRequestSale = NSBatchDeleteRequest(fetchRequest: NSFetchRequest(entityName: "Sale"))
@@ -116,14 +116,14 @@ class ProfileViewController: UITableViewController {
             
             // Attempt to execute delete request for Sale objects
             do {
-                try self.psc.executeRequest(deleteRequestSale, withContext: self.managedContext)
+                try self.psc.execute(deleteRequestSale, with: self.managedContext)
             } catch let error as NSError {
                 print("Error: Could not execute batch delete request for Sale objects.\n\(error.localizedDescription)")
             }
             
             // Attempty to execute delete request for all Item objects
             do {
-                try self.psc.executeRequest(deleteRequestItem, withContext: self.managedContext)
+                try self.psc.execute(deleteRequestItem, with: self.managedContext)
             } catch let error as NSError {
                 print("Error: Could not execute batch delete request for Item objects.\n\(error.localizedDescription)")
             }
@@ -131,18 +131,18 @@ class ProfileViewController: UITableViewController {
             // Reset switch and exit settings screen
             print("% Persistent store was wiped.")
             self.resetDatabaseSwitch.setOn(false, animated: true)
-            self.navigationController?.popViewControllerAnimated(true)
+            _ = self.navigationController?.popViewController(animated: true)
         }))
         
         
         // Cancel deletion...
-        ac.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action: UIAlertAction!) in
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
             print("% Reset was cancelled.")
             self.resetDatabaseSwitch.setOn(false, animated: true)
         }))
         
         // Present popup
-        self.presentViewController(ac, animated: true, completion: nil)
+        self.present(ac, animated: true, completion: nil)
     }
     
     
@@ -153,32 +153,32 @@ class ProfileViewController: UITableViewController {
         
         if !pendingChanges {
             print("% No changes to be saved")
-            super.navigationController?.popViewControllerAnimated(true)
+            _ = super.navigationController?.popViewController(animated: true)
             return
         }
         
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         
-        defaults.setInteger(taxValue, forKey: "Tax")
-        defaults.setObject(userName, forKey: "Name")
+        defaults.set(taxValue, forKey: "Tax")
+        defaults.set(userName, forKey: "Name")
         print("% Settings were saved")
         
         // No more pending changes
         pendingChanges = false
         
         // Return to Home Menu after settings are saved
-        super.navigationController?.popViewControllerAnimated(true)
+        _ = super.navigationController?.popViewController(animated: true)
     }
     
     // ==========================================
     // ==========================================
     func retrieveSettings() {
         
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         
         // Obtain name and tax, store into local variables
-        userName = defaults.objectForKey("Name") as? String ?? "Your Name Here"
-        taxValue = defaults.integerForKey("Tax")
+        userName = defaults.object(forKey: "Name") as? String ?? "Your Name Here"
+        taxValue = defaults.integer(forKey: "Tax")
         print("% Settings were retrieved")
     }
     
@@ -192,24 +192,24 @@ class ProfileViewController: UITableViewController {
         dailySalesTotal = 0.00
         dailyWarrantiesTotal = 0.00
         
-        let fetch = NSFetchRequest(entityName: "Sale")
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Sale")
         
         do {
             
             // Fetch all sales ever recorded
-            let results = try managedContext.executeFetchRequest(fetch) as! [Sale]
+            let results = try managedContext.fetch(fetch) as! [Sale]
             
             for sale in results {
                 
                 // If sale was made today, update daily totals
                 // ++++++++++++++++++++++++++++++++++++++++++++++++
-                if (NSCalendar.currentCalendar().isDate(NSDate(), inSameDayAsDate: sale.date!)) {
+                if (NSCalendar.current.isDate(Date(), inSameDayAs: sale.date! as Date)) {
                     
                     dailySalesTotal += Double(sale.total!)
                     
                     // Check each item in this sale, add any warranties to daily warranty total
                     for saleItem in sale.items! {
-                        if (saleItem.name?.containsString("Plan") == true) {
+                        if ((saleItem as! Item).name!.contains("Plan")) {
                             
                             let warrantyPlan = saleItem as! Item
                             dailyWarrantiesTotal += Double(warrantyPlan.price!)
@@ -228,7 +228,7 @@ class ProfileViewController: UITableViewController {
                 for saleItem in sale.items! {
                     
                     
-                    if (saleItem.name?.containsString("Plan") == true) {
+                    if ((saleItem as! Item).name!.contains("Plan")) {
                         
                         let warrantyPlan = saleItem as! Item
                         warrantiesTotal += Double(warrantyPlan.price!)
@@ -242,10 +242,10 @@ class ProfileViewController: UITableViewController {
         }
         
         // Now that fetching has finished, update UI
-        totalSalesLabel.text = priceFormatter.stringFromNumber(salesTotal)
-        totalWarrantiesLabel.text = priceFormatter.stringFromNumber(warrantiesTotal)
-        warrantiesTodayLabel.text = priceFormatter.stringFromNumber(dailyWarrantiesTotal)
-        salesTodayLabel.text = priceFormatter.stringFromNumber(dailySalesTotal)
+        totalSalesLabel.text = priceFormatter.string(from: NSNumber(value: salesTotal))
+        totalWarrantiesLabel.text = priceFormatter.string(from: NSNumber(value: warrantiesTotal))
+        warrantiesTodayLabel.text = priceFormatter.string(from: NSNumber(value: dailyWarrantiesTotal))
+        salesTodayLabel.text = priceFormatter.string(from: NSNumber(value: dailySalesTotal))
     }
 }
 

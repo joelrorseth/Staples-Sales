@@ -18,19 +18,19 @@ class SaleDetailViewController: UIViewController  {
     // Add computed properties to hold and update totals
     var saleSubtotal: Double = 0.00 {
         didSet {
-            self.subtotalLabel.text = "Subtotal: \(priceFormatter.stringFromNumber(saleSubtotal)!)"
+            self.subtotalLabel.text = "Subtotal: \(priceFormatter.string(from: NSNumber(value: saleSubtotal))!)"
         }
     }
     
     var saleTotal: Double = 0.00 {
         didSet {
-            self.totalLabel.text = "Total: \(priceFormatter.stringFromNumber(saleTotal)!)"
+            self.totalLabel.text = "Total: \(priceFormatter.string(from: NSNumber(value: saleTotal))!)"
         }
     }
     
-    lazy var priceFormatter: NSNumberFormatter = {
-        let formatter = NSNumberFormatter()
-        formatter.numberStyle = .CurrencyStyle
+    lazy var priceFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.currency
         
         return formatter
     }()
@@ -48,7 +48,7 @@ class SaleDetailViewController: UIViewController  {
         summaryTableView.delegate = self
         
         // Add 'separator' between the buttons
-        self.subtotalLabel.addBottomBorderWithColor(UIColor.grayColor(), width: 0.7)
+        self.subtotalLabel.addBottomBorderWithColor(color: UIColor.gray, width: 0.7)
         
         self.summaryTableView.allowsSelection = false
         
@@ -62,13 +62,13 @@ extension SaleDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     // ==========================================
     // ==========================================
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = summaryTableView.dequeueReusableCellWithIdentifier("SummaryCell", forIndexPath: indexPath) as! SummaryCell
+        let cell = summaryTableView.dequeueReusableCell(withIdentifier: "SummaryCell", for: indexPath) as! SummaryCell
         let item = sale.items![indexPath.row] as! Item
 
         cell.itemLabel.text = "\(item.name!)"
-        cell.itemPrice.text = priceFormatter.stringFromNumber(item.price!)
+        cell.itemPrice.text = priceFormatter.string(from: item.price!)
         
         if (item.sku == 0.00) {
             cell.itemSKU.text = "000000"
@@ -82,13 +82,13 @@ extension SaleDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     // ==========================================
     // ==========================================
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     // ==========================================
     // ==========================================
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sale.items!.count
     }
 }
