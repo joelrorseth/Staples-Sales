@@ -23,12 +23,12 @@ class WarrantyViewController: UITableViewController, WarrantyCellDelegate {
     var warrantiesTotal: Double = 0.00 {
         didSet {
             if warrantiesTotal != 0.00 {
-                UIView.animateWithDuration(0.4, animations: {
-                    self.title = "$\(self.inputPriceString) + \(self.priceFormatter.stringFromNumber(self.warrantiesTotal)!)"
+                UIView.animate(withDuration: 0.4, animations: {
+                    self.title = "$\(self.inputPriceString!) + \(self.priceFormatter.string(from: NSNumber(value: self.warrantiesTotal))!)"
                 })
             } else {
                 UIView.animate(withDuration: 0.4, animations: {
-                    self.title = "Subtotal: $\(self.inputPriceString)"
+                    self.title = "Subtotal: $\(self.inputPriceString!)"
                 })
             }
         }
@@ -42,7 +42,7 @@ class WarrantyViewController: UITableViewController, WarrantyCellDelegate {
     }()
     
     // Variables concerning information about chosen product
-    var inputPrice: Double!
+    var inputPrice: Double = 0.0
     var inputPriceString: String!
     var inputCategory: String!
     
@@ -60,7 +60,7 @@ class WarrantyViewController: UITableViewController, WarrantyCellDelegate {
         tableView.backgroundColor = UIColor(red: 231/255, green: 231/255, blue: 231/255, alpha: 1.0)
         self.footerView = UIView()
         
-        self.title = "Subtotal: $\(self.inputPriceString)"
+        self.title = "Subtotal: $\(self.inputPriceString!)"
         
         loadJSON()
     }
@@ -96,12 +96,12 @@ class WarrantyViewController: UITableViewController, WarrantyCellDelegate {
         cell.delegate = self
         
         // Configure the custom cell using appropriate warranty
-        cell.planTypeLabel.text = "\(warrantyOptions[indexPath.row].type) Plan"
+        cell.planTypeLabel.text = "\(warrantyOptions[indexPath.row].type!) Plan"
         cell.detailLabel.text = "\(warrantyOptions[indexPath.row].period) Year"
         
         // Set the price button to reflect warranty price
-        let priceText = priceFormatter.stringFromNumber(warrantyOptions[indexPath.row].price)
-        cell.priceButton.setTitle(priceText, forState: .Normal)
+        let priceText = priceFormatter.string(from: warrantyOptions[indexPath.row].price as NSNumber)
+        cell.priceButton.setTitle(priceText, for: .normal)
         cell.priceButton.layer.cornerRadius = 3.3
         
         return cell

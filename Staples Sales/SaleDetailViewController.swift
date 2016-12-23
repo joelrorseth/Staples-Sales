@@ -18,13 +18,13 @@ class SaleDetailViewController: UIViewController  {
     // Add computed properties to hold and update totals
     var saleSubtotal: Double = 0.00 {
         didSet {
-            self.subtotalLabel.text = "Subtotal: \(priceFormatter.stringFromNumber(saleSubtotal)!)"
+            self.subtotalLabel.text = "Subtotal: \(priceFormatter.string(from: NSNumber(value: saleSubtotal))!)"
         }
     }
     
     var saleTotal: Double = 0.00 {
         didSet {
-            self.totalLabel.text = "Total: \(priceFormatter.stringFromNumber(saleTotal)!)"
+            self.totalLabel.text = "Total: \(priceFormatter.string(from: NSNumber(value: saleTotal))!)"
         }
     }
     

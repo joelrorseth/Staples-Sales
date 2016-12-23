@@ -87,8 +87,8 @@ class SummaryViewController: UIViewController {
         total = Double(round(100 * total)/100)
         
         // Update labels
-        self.subtotalLabel.text = "Subtotal: \(priceFormatter.stringFromNumber(subtotal)!)"
-        self.totalLabel.text = "Total: \(priceFormatter.stringFromNumber(total)!)"
+        self.subtotalLabel.text = "Subtotal: \(priceFormatter.string(from: NSNumber(value: subtotal))!)"
+        self.totalLabel.text = "Total: \(priceFormatter.string(from: NSNumber(value: total))!)"
     }
     
     // ==========================================
@@ -174,7 +174,7 @@ extension SummaryViewController: UITableViewDelegate, UITableViewDataSource {
             
             // If no more items after item removal, exit empty summary screen
             if (saleItems.isEmpty) {
-                self.navigationController?.popViewController(animated: true)
+                _ = self.navigationController?.popViewController(animated: true)
             }
         }
     }

@@ -244,7 +244,7 @@
                     <navigationItem key="navigationItem" id="Q6l-21-vUx">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="wwk-Wu-DMY">
                             <connections>
-                                <segue destination="9Gz-QB-8TR" kind="unwind" unwindAction="exitingWarranties:" id="IbM-Cs-6Rk"/>
+                                <segue destination="9Gz-QB-8TR" kind="unwind" unwindAction="exitingWarrantiesWithSegue:" id="7bK-61-KO6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -372,7 +372,7 @@
                     <navigationItem key="navigationItem" title="Your Staples Order" id="eFE-Vz-qVw">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Q3c-b2-2Qa">
                             <connections>
-                                <segue destination="JyD-wX-fTk" kind="unwind" unwindAction="didFinalizeOrder:" id="sRp-xX-KI0"/>
+                                <segue destination="JyD-wX-fTk" kind="unwind" unwindAction="didFinalizeOrderWithSegue:" id="dqu-Jk-tA8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -542,7 +542,7 @@
                                         <color key="titleColor" red="0.75403733220000002" green="0.81430893459999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
-                                        <action selector="editName:" destination="egh-ry-xVC" eventType="touchUpInside" id="AiC-58-0Xv"/>
+                                        <action selector="editNameWithSender:" destination="egh-ry-xVC" eventType="touchUpInside" id="tyc-9v-tqr"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -718,7 +718,7 @@
                                                 <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="13" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="0HR-QX-e7C">
                                                     <rect key="frame" x="131" y="7" width="408" height="31"/>
                                                     <connections>
-                                                        <action selector="taxValueChanged:" destination="egh-ry-xVC" eventType="valueChanged" id="gbq-XF-ymv"/>
+                                                        <action selector="taxValueChangedWithSender:" destination="egh-ry-xVC" eventType="valueChanged" id="UdI-Hc-6RF"/>
                                                     </connections>
                                                 </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="13%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2c-NX-hIu">
@@ -752,7 +752,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="b29-fr-rwJ">
                                                     <rect key="frame" x="535" y="6" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="resetSwitchTriggered:" destination="egh-ry-xVC" eventType="valueChanged" id="wdd-Sm-KS9"/>
+                                                        <action selector="resetSwitchTriggeredWithSender:" destination="egh-ry-xVC" eventType="valueChanged" id="L2q-Nn-aHe"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset Sales" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSg-VG-ucI">

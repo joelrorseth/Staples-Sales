@@ -51,12 +51,19 @@ class HomeViewController: UIViewController {
     // ==========================================
     override func viewDidAppear(_ animated: Bool) {
         
-        var results = [AnyObject]()
-        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+        var results = [Item]()
+        let request: NSFetchRequest<Item>
+        
+        // Allow for backwards compatible fetch request
+        if #available(iOS 10.0, OSX 10.12, *) {
+            request = Item.fetchRequest() as! NSFetchRequest<Item>
+        } else {
+            request = NSFetchRequest(entityName: "Item")
+        }
         
         // Find all Item objects
         do {
-            try results = managedContext.execute(fetch)
+            results = try managedContext.fetch(request)
         } catch let error as NSError {
             print(error)
         }
@@ -64,9 +71,9 @@ class HomeViewController: UIViewController {
         
         // Check each Item, if not attached to a Sale, delete from memory!
         for item in results {
-            if ((item as! Item).sale == nil) {
+            if (item.sale == nil) {
                 print("=> \(item.name!) isn't attached to a sale")
-                managedContext.delete(item as! Item)
+                managedContext.delete(item)
                 
                 saveRequired = true
                 print("=> Item deleted")

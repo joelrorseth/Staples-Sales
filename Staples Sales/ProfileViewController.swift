@@ -131,7 +131,7 @@ class ProfileViewController: UITableViewController {
             // Reset switch and exit settings screen
             print("% Persistent store was wiped.")
             self.resetDatabaseSwitch.setOn(false, animated: true)
-            self.navigationController?.popViewController(animated: true)
+            _ = self.navigationController?.popViewController(animated: true)
         }))
         
         
@@ -153,7 +153,7 @@ class ProfileViewController: UITableViewController {
         
         if !pendingChanges {
             print("% No changes to be saved")
-            super.navigationController?.popViewController(animated: true)
+            _ = super.navigationController?.popViewController(animated: true)
             return
         }
         
@@ -167,7 +167,7 @@ class ProfileViewController: UITableViewController {
         pendingChanges = false
         
         // Return to Home Menu after settings are saved
-        super.navigationController?.popViewController(animated: true)
+        _ = super.navigationController?.popViewController(animated: true)
     }
     
     // ==========================================
@@ -209,7 +209,7 @@ class ProfileViewController: UITableViewController {
                     
                     // Check each item in this sale, add any warranties to daily warranty total
                     for saleItem in sale.items! {
-                        if (saleItem.name?.containsString("Plan") == true) {
+                        if ((saleItem as! Item).name!.contains("Plan")) {
                             
                             let warrantyPlan = saleItem as! Item
                             dailyWarrantiesTotal += Double(warrantyPlan.price!)
@@ -228,7 +228,7 @@ class ProfileViewController: UITableViewController {
                 for saleItem in sale.items! {
                     
                     
-                    if (saleItem.name?.containsString("Plan") == true) {
+                    if ((saleItem as! Item).name!.contains("Plan")) {
                         
                         let warrantyPlan = saleItem as! Item
                         warrantiesTotal += Double(warrantyPlan.price!)
@@ -242,10 +242,10 @@ class ProfileViewController: UITableViewController {
         }
         
         // Now that fetching has finished, update UI
-        totalSalesLabel.text = priceFormatter.stringFromNumber(salesTotal)
-        totalWarrantiesLabel.text = priceFormatter.stringFromNumber(warrantiesTotal)
-        warrantiesTodayLabel.text = priceFormatter.stringFromNumber(dailyWarrantiesTotal)
-        salesTodayLabel.text = priceFormatter.stringFromNumber(dailySalesTotal)
+        totalSalesLabel.text = priceFormatter.string(from: NSNumber(value: salesTotal))
+        totalWarrantiesLabel.text = priceFormatter.string(from: NSNumber(value: warrantiesTotal))
+        warrantiesTodayLabel.text = priceFormatter.string(from: NSNumber(value: dailyWarrantiesTotal))
+        salesTodayLabel.text = priceFormatter.string(from: NSNumber(value: dailySalesTotal))
     }
 }
 

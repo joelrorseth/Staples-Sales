@@ -66,7 +66,7 @@ class SalesViewController: UITableViewController, UISearchBarDelegate {
     
     // ==========================================
     // ==========================================
-    func configureCell(cell: SaleCell, indexPath: NSIndexPath) {
+    func configureCell(cell: SaleCell, indexPath: IndexPath) {
         
         // Use index path from "cellForRow..." to look up Sale object to display
         let sale = fetchedResultsController.object(at: indexPath as IndexPath) as! Sale
@@ -100,7 +100,7 @@ class SalesViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "saleCell", for: indexPath as IndexPath) as! SaleCell
         
-        configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
+        configureCell(cell: cell, indexPath: indexPath)
         return cell
     }
     
@@ -168,7 +168,7 @@ class SalesViewController: UITableViewController, UISearchBarDelegate {
             
             // IMPROTANT: Pass Sale object at path to SaleDetailViewController
             sdvc.sale = fetchedResultsController.object(at: path!) as! Sale
-            sdvc.title = dateFormatter.stringFromDate(sdvc.sale.date!)
+            sdvc.title = dateFormatter.string(from: sdvc.sale.date! as Date)
         }
     }
 }

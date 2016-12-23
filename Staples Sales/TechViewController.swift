@@ -63,7 +63,7 @@ class TechViewController: UIViewController {
         nameTextField.delegate = self
         
         // Set up gesture recognizer to dismiss keyboard
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(TechViewController.dismissKeyboard(_:)))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(TechViewController.dismissKeyboard(gesture:)))
         view.addGestureRecognizer(tapGesture)
     }
     
@@ -118,8 +118,9 @@ class TechViewController: UIViewController {
                 let entityDesc = NSEntityDescription.entity(forEntityName: "Item", in: managedContext)
                 let currentItem = Item(entity: entityDesc!, insertInto: managedContext)
                 
+                
                 // Set the price from text field
-                currentItem.price = NSDecimalNumber(double: Double(priceTextField.text!)!)
+                currentItem.price = NSDecimalNumber(string: priceTextField.text!)
                 
                 // Determine the name from our name text field
                 if (nameTextField.text!.isEmpty) {
@@ -151,7 +152,7 @@ class TechViewController: UIViewController {
             
             
             // Before leaving, take care of updating screen before segueing
-            self.title = "Subtotal: \(priceFormatter.stringFromNumber(runningTotal)!)"
+            self.title = "Subtotal: \(priceFormatter.string(from: NSNumber(value: runningTotal))!)"
             
             // Reset text fields on this controller
             self.categoryTextField.text = ""
@@ -242,8 +243,8 @@ class TechViewController: UIViewController {
                 
                 // Set warranty item's properties
                 item.name = "\(selectedWarranty.type.rawValue) Plan"
-                item.price = NSDecimalNumber(double: selectedWarranty.price!)
-                item.sku = selectedWarranty.sku
+                item.price = NSDecimalNumber(value: selectedWarranty.price!)
+                item.sku = selectedWarranty.sku as NSNumber?
                 
                 print("+ Created Item object onto managed object context.")
                 
@@ -258,7 +259,7 @@ class TechViewController: UIViewController {
         let currentItem = Item(entity: entityDesc!, insertInto: managedContext)
         
         // Set the price from text field
-        currentItem.price = NSDecimalNumber(double: Double(priceTextField.text!)!)
+        currentItem.price = NSDecimalNumber(string: priceTextField.text!)
         
         // Determine the name from our name text field
         if (nameTextField.text!.isEmpty) {
@@ -276,7 +277,7 @@ class TechViewController: UIViewController {
         // Add warranties to subtotal
         runningTotal += wvc.warrantiesTotal
         
-        self.title = "Subtotal: \(priceFormatter.stringFromNumber(runningTotal)!)"
+        self.title = "Subtotal: \(priceFormatter.string(from: NSNumber(value: runningTotal)))"
         
         // Reset values
         self.categoryTextField.text = ""
@@ -325,14 +326,14 @@ class TechViewController: UIViewController {
             if (runningTotal == 0.00) {
                 self.title = "Subtotal: $\(priceTextField.text!)"
             } else {
-                self.title = "\(priceFormatter.stringFromNumber(runningTotal)!) + $\(priceTextField.text!)"
+                self.title = "\(priceFormatter.string(from: NSNumber(value: runningTotal))!) + $\(priceTextField.text!)"
             }
             
         } else {
             
             // Price not entered, display running total if it exists
             if (runningTotal != 0.00) {
-                self.title = "Subtotal: \(priceFormatter.stringFromNumber(runningTotal)!)"
+                self.title = "Subtotal: \(priceFormatter.string(from: NSNumber(value: runningTotal))!)"
             } else {
                 self.title = "New Sale"
             }
@@ -404,16 +405,16 @@ extension TechViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         if (textField == priceTextField) {
-            let numParts = textField.text?.componentsSeparatedByString(".")
+            let numParts = textField.text!.components(separatedBy: ".")
             
             // If user adds 2nd decimal when fractional part already exists, deny by returning false
-            if (numParts?.count > 1 && string == ".")
+            if (numParts.count > 1 && string == ".")
             {
                 return false
             }
                 
                 // If user enters over 2 numbers...
-            else if (numParts?.count > 1 && (numParts?[1].characters.count >= 2)) {
+            else if (numParts.count > 1 && (numParts[1].characters.count >= 2)) {
                 
                 // If just backspacing, allow editing
                 if (string == "") {
@@ -437,10 +438,10 @@ extension TechViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         if (textField == priceTextField) {
-            let numParts = textField.text?.componentsSeparatedByString(".")
+            let numParts = textField.text!.components(separatedBy: ".")
             
             // Add zeros and/or decimal to fix format to xxx.xx
-            if (numParts?.count == 1) {
+            if (numParts.count == 1) {
                 
                 // Check to make sure field isnt empty either
                 if (textField.text == "") {
@@ -450,9 +451,9 @@ extension TechViewController: UITextFieldDelegate {
                 }
                 
                 
-            } else if (numParts?[1].characters.count == 1) {
+            } else if (numParts[1].characters.count == 1) {
                 textField.text = textField.text! + "0"
-            } else if (numParts?[1].characters.count == 0) {
+            } else if (numParts[1].characters.count == 0) {
                 textField.text = textField.text! + "00"
             }
             
