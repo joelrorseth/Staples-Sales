@@ -6,7 +6,7 @@ Staples Sales provides an organized and extremely simple interface to quickly es
 
 
 ## Usage
-The app was designed to for iPhone 6/6S and iPhone 6/6S Plus, running at least iOS 9. Further updates may be coming to extend functionality on other Apple Devices.
+This app has been fully reworked for Swift 3, and now runs on iOS 10. The app has been designed and tested for iPhone 7/ iPhone 7 Plus, but should work on all models after iPhone 5 running at least iOS 9.3.
 
 ## About Me
 This app was created entirely myself, Joel Rorseth, 19 year old SWE student from University of Windsor, and a tech associate from Staples store 30 in Windsor, Ontario. Creating this app helped me memorize and familiarize myself with all the warranty options Staples has to offer. The project itself is a good way to demonstrate my experience and skill in iOS and mobile application development. The app was designed, coded, and tested completely.
