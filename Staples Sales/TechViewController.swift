@@ -277,7 +277,7 @@ class TechViewController: UIViewController {
         // Add warranties to subtotal
         runningTotal += wvc.warrantiesTotal
         
-        self.title = "Subtotal: \(priceFormatter.string(from: NSNumber(value: runningTotal)))"
+        self.title = "Subtotal: \(priceFormatter.string(from: NSNumber(value: runningTotal))!)"
         
         // Reset values
         self.categoryTextField.text = ""
